@@ -39,6 +39,44 @@
         <dict>
             <key>Arguments</key>
             <dict>
+                <key>dmg_path</key>
+                <string>%pathname%</string>
+                <key>items_to_copy</key>
+                <array>
+                   <dict>
+                      <key>source_item</key>
+                      <string>ChemDoodle</string>
+                      <key>destination_path</key>
+                      <string>/Applications</string>
+                   </dict>
+                </array>
+            </dict>
+            <key>Processor</key>
+            <string>InstallFromDMG</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>installs_item_paths</key>
+                <array>
+                    <string>/Applications/ChemDoodle/ChemDoodle.app</string>
+                </array>
+                <key>version_comparison_key</key>
+                <string>CFBundleVersion</string>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiInstallsItemsCreator</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiPkginfoMerger</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
                 <key>additional_pkginfo</key>
                 <dict>
 	                 <key>items_to_copy</key>
@@ -62,8 +100,6 @@
                 <string>%pathname%</string>
                 <key>repo_subdirectory</key>
                 <string>%MUNKI_REPO_SUBDIR%</string>
-                <key>version_comparison_key</key>
-                <string>CFBundleVersion</string>
                 <key>additional_makepkginfo_options</key>
                 <array>
                      <string>--itemname=ChemDoodle/ChemDoodle.app</string>

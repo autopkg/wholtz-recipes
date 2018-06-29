@@ -33,6 +33,13 @@
                     <string>GPGSuite</string>
                     <!--- also requires git or xcode command line tools --->
             </array>
+            <key>postinstall_script</key>
+            <string>#!/bin/sh
+
+# symlink gopass to pass for compatibility with pass utilities
+ln -s /usr/local/bin/gopass /usr/local/bin/pass
+
+           </string>
         </dict>
     </dict>
     <key>MinimumVersion</key>

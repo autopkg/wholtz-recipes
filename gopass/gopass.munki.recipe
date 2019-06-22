@@ -31,7 +31,7 @@
             <key>requires</key>
             <array>
                     <string>GPGSuite</string>
-                    <!--- also requires git or xcode command line tools --->
+                    <!-- also requires git or xcode command line tools -->
             </array>
             <key>postinstall_script</key>
             <string>#!/bin/sh

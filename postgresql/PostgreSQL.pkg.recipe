@@ -19,19 +19,6 @@
     <array>
         <dict>
             <key>Processor</key>
-            <string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
-            <key>Arguments</key>
-            <dict>
-                <key>find</key>
-                <string>-</string>
-                <key>input_string</key>
-                <string>%raw_version%</string>
-                <key>replace</key>
-                <string>.</string>
-           </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
             <string>PkgRootCreator</string>
             <key>Arguments</key>
             <dict>
@@ -47,9 +34,9 @@
             <key>Arguments</key>
             <dict>
                 <key>source_path</key>
-                <string>%pathname%/postgresql-%raw_version%-osx.app</string>
+                <string>%pathname%/postgresql-%match%-1-osx.app</string>
                 <key>destination_path</key>
-                <string>%RECIPE_CACHE_DIR%/Scripts/postgresql-%raw_version%-osx.app</string>
+                <string>%RECIPE_CACHE_DIR%/Scripts/postgresql-%match%-1-osx.app</string>
                 <key>overwrite</key>
                 <true/>
             </dict>
@@ -70,7 +57,7 @@
 install_dir=$(dirname $0)
 
 # install with no UI
-"${install_dir}/postgresql-%raw_version%-osx.app/Contents/MacOS/osx-intel" --unattendedmodeui none --mode unattended</string>
+"${install_dir}/postgresql-%match%-1-osx.app/Contents/MacOS/osx-x86_64" --unattendedmodeui none --mode unattended</string>
             </dict>
         </dict>
         <dict>
@@ -83,13 +70,13 @@ install_dir=$(dirname $0)
                     <key>pkgroot</key>
                     <string>%RECIPE_CACHE_DIR%/pkgroot</string>
                     <key>pkgname</key>
-                    <string>%NAME%-%output_string%</string>
+                    <string>%NAME%-%match%</string>
                     <key>pkgtype</key>
                     <string>flat</string>
                     <key>id</key>
                     <string>com.enterprisedb.postgresql.pkg</string>
                     <key>version</key>
-                    <string>%output_string%</string>
+                    <string>%match%</string>
                     <key>scripts</key>
                     <string>Scripts</string>
                 </dict>

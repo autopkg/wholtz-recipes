@@ -25,7 +25,7 @@
                 <key>url</key>
                 <string>https://www.enterprisedb.com/download-postgresql-binaries</string>
                 <key>re_pattern</key>
-                <string>postgresql-(?P&lt;raw_version&gt;[0-9\.\-]+)-osx-binaries\.zip</string>
+                <string>&lt;b&gt;Version (\S*)&lt;\/b&gt;</string>
             </dict>
         </dict>
         <dict>
@@ -34,7 +34,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>https://get.enterprisedb.com/postgresql/postgresql-%raw_version%-osx.dmg</string>
+                <string>https://get.enterprisedb.com/postgresql/postgresql-%match%-1-osx.dmg</string>
             </dict>
         </dict>
         <dict>
@@ -45,7 +45,7 @@
             <key>Arguments</key>
             <dict>
                 <key>input_path</key>
-                <string>%pathname%/postgresql-%raw_version%-osx.app</string>
+                <string>%pathname%/postgresql-%match%-1-osx.app</string>
                 <key>requirement</key>
                 <string>identifier "com.edb.postgresql" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "26QKX55P9K"</string>
             </dict>

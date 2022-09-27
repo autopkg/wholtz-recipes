@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.2.1 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Opentrons.</string>
 	<key>Identifier</key>
-  <string>com.github.wholtz.opentrons.download</string>
+	<string>com.github.wholtz.opentrons.download</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
@@ -17,26 +17,26 @@
 	<string>1.0.0</string>
 	<key>Process</key>
 	<array>
-    <dict>
-      <key>Processor</key>
-      <string>URLTextSearcher</string>
-      <key>Arguments</key>
-      <dict>
-          <key>url</key>
-          <string>https://opentrons.com/ot-app</string>
-          <key>re_pattern</key>
-        <string>Opentrons-v(?P&lt;raw_version&gt;[0-9\.]+\-mac\-[a-z0-9]+)\.dmg</string>
-      </dict>
-    </dict>
-    <dict>
-      <key>Processor</key>
-      <string>URLDownloader</string>
-      <key>Arguments</key>
-      <dict>
-        <key>url</key>
-        <string>https://s3.amazonaws.com/opentrons-app/builds/Opentrons-v%raw_version%.dmg</string>
-      </dict>
-    </dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>asset_regex</key>
+				<string>.*\.dmg$</string>
+				<key>github_repo</key>
+				<string>Opentrons/opentrons</string>
+			</dict>
+			<key>Processor</key>
+			<string>GitHubReleasesInfoProvider</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%-%version%.dmg</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>

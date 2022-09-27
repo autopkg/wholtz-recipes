@@ -54,7 +54,7 @@
             <key>Arguments</key>
             <dict>
                 <key>source</key>
-                <string>%destination_path%/%NAME%-%version%-darwin-amd64/gopass</string>
+                <string>%destination_path%/%NAME%</string>
                 <key>target</key>
                 <string>%pkgroot%/usr/local/bin/gopass</string>
             </dict>

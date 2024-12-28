@@ -23,9 +23,10 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>https://www.enterprisedb.com/download-postgresql-binaries</string>
+                <string>https://www.enterprisedb.com/downloads/postgres-postgresql-downloads</string>
                 <key>re_pattern</key>
-                <string>&lt;b&gt;Version (\S*)&lt;\/b&gt;</string>
+                <!-- <string>&lt;b&gt;Version (\S*)&lt;\/b&gt;</string> -->
+                <string>table-body"&gt;([\d\.]+)&lt;/td&gt;</string>
             </dict>
         </dict>
         <dict>

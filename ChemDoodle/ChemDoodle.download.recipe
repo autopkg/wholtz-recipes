@@ -3,13 +3,20 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest version of ChemDoodle.</string>
+    <string>Downloads the latest version of ChemDoodle.
+    
+Valid values for ARCH include:
+- "x64" (default, Intel)
+- "aarch64" (Apple Silicon)
+</string>
     <key>Identifier</key>
     <string>com.github.wholtz.chemdoodle.download</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
         <string>ChemDoodle</string>
+        <key>ARCH</key>
+        <string>x64</string>
     </dict>
     <key>MinimumVersion</key>
     <string>1.0.0</string>
@@ -23,7 +30,7 @@
                 <key>url</key>
                 <string>https://www.chemdoodle.com/download/</string>
                 <key>re_pattern</key>
-                <string>ChemDoodle-macos-(?P&lt;raw_version&gt;[0-9\.\-]+)\.dmg</string>
+                <string>ChemDoodle-macos-%ARCH%-(?P&lt;raw_version&gt;[0-9\.\-]+)\.dmg</string>
             </dict>
         </dict>
         <dict>
@@ -32,7 +39,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>https://www.chemdoodle.com/downloads/ChemDoodle-macos-%raw_version%.dmg</string>
+                <string>https://www.chemdoodle.com/downloads/ChemDoodle-macos-%ARCH%-%raw_version%.dmg</string>
             </dict>
         </dict>
         <dict>

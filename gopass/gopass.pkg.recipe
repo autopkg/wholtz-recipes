@@ -87,8 +87,6 @@
                     <string>%RECIPE_CACHE_DIR%/</string>
                     <key>id</key>
                     <string>com.github.justwatchcom.gopass</string>
-                    <key>options</key>
-                    <string>purge_ds_store</string>
                     <key>version</key>
                     <string>%version%</string>
                     <key>chown</key>
